@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:walkfit/email_Login.dart';
+import 'package:walkfit/emailLoginPage.dart';
+import 'package:walkfit/logo.dart';
+import 'package:walkfit/startPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,8 +16,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
         primaryColor: const Color.fromRGBO(33, 47, 131, 1),
+        fontFamily: 'PretendardVariable'
       ),
-      home: const EmailLogin(),
+      home: const EmailLoginPage(),
     );
   }
 }
+          

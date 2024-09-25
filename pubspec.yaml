@@ -64,6 +64,9 @@ flutter:
     - family: Cafe24Moyamoya-Regular-v1.0
       fonts:
         - asset: assets/fonts/Cafe24Moyamoya-Regular-v1.0.otf
+    - family: PretendardVariable
+      fonts:
+        - asset: assets/fonts/PretendardVariable.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:

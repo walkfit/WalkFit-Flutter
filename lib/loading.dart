@@ -15,7 +15,7 @@ class Loading extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Logo(
-                fontSize: 90,
+                fontSize: 92,
               )
             ],
           ),

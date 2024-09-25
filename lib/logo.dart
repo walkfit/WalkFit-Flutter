@@ -14,7 +14,8 @@ class Logo extends StatelessWidget {
       textAlign: TextAlign.center,
       style: TextStyle(
         fontFamily: 'Cafe24Moyamoya-Regular-v1.0',
-        color: Theme.of(context).primaryColor,
+        fontWeight: FontWeight.w400,
+        color: const Color.fromRGBO(33, 47, 131, 1),
         fontSize: fontSize,
       ),
     );
