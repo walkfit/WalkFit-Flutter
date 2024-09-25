@@ -1,5 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:walkfit/emailLoginPage.dart';
+import 'package:walkfit/joinPage.dart';
 import 'package:walkfit/logo.dart';
 
 void main() {
@@ -30,73 +32,86 @@ class WidgetTest extends StatelessWidget {
                   const SizedBox(
                     height: 387,
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 14.16,
-                    ),
-                    width: 350,
-                    height: 52,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: const Color.fromRGBO(140, 140, 140, 0.2),
+                  InkWell(
+                    onTap: () {},
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 14.16,
                       ),
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          'assets/images/google_upgrade.png',
+                      width: 350,
+                      height: 52,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(
+                          color: const Color.fromRGBO(140, 140, 140, 0.2),
                         ),
-                        const Expanded(
-                          child: Text(
-                            '구글로 가입하기',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'PretendardVariable',
-                              fontWeight: FontWeight.w500,
-                              height: 0.08, //줄간격
-                              letterSpacing: -0.32, //자간
-                            ),
-                            textAlign: TextAlign.center,
+                      ),
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            'assets/images/google_upgrade.png',
                           ),
-                        ),
-                      ],
+                          const Expanded(
+                            child: Text(
+                              '구글로 가입하기',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: 'PretendardVariable',
+                                fontWeight: FontWeight.w500,
+                                height: 0.08, //줄간격
+                                letterSpacing: -0.32, //자간
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   const SizedBox(
                     height: 12,
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 14.16,
-                    ),
-                    width: 350,
-                    height: 52,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: const Color.fromRGBO(140, 140, 140, 0.2),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Joinpage(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 14.16,
                       ),
-                    ),
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          'assets/images/ic_outline-email.png',
+                      width: 350,
+                      height: 52,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(
+                          color: const Color.fromRGBO(140, 140, 140, 0.2),
                         ),
-                        const Expanded(
-                          child: Text(
-                            '이메일로 가입하기',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'PretendardVariable',
-                              fontWeight: FontWeight.w500,
-                              height: 0.08, //줄간격
-                              letterSpacing: -0.32, //자간
-                            ),
-                            textAlign: TextAlign.center,
+                      ),
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            'assets/images/ic_outline-email.png',
                           ),
-                        ),
-                      ],
+                          const Expanded(
+                            child: Text(
+                              '이메일로 가입하기',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: 'PretendardVariable',
+                                fontWeight: FontWeight.w500,
+                                height: 0.08, //줄간격
+                                letterSpacing: -0.32, //자간
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -122,7 +137,12 @@ class WidgetTest extends StatelessWidget {
                           ),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
-                              const Text('success');
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const EmailLoginPage(),
+                                ),
+                              );
                             },
                         ),
                       ],

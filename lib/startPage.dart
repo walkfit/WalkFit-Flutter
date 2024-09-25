@@ -1,5 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:walkfit/emailLoginPage.dart';
+import 'package:walkfit/joinPage.dart';
 import 'package:walkfit/logo.dart';
 
 class StartPage extends StatelessWidget {
@@ -62,7 +64,14 @@ class StartPage extends StatelessWidget {
                   height: 12,
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Joinpage(),
+                      ),
+                    );
+                  },
                   child: Container(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 14.16,
@@ -120,7 +129,12 @@ class StartPage extends StatelessWidget {
                         ),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
-                            print('success');
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const EmailLoginPage(),
+                              ),
+                            );
                           },
                       ),
                     ],
