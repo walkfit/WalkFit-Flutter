@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:walkfit/startPage.dart';
+import 'package:walkfit/accountCheckPage.dart';
 
 class Joinpage extends StatelessWidget {
   const Joinpage({super.key});
@@ -13,7 +13,7 @@ class Joinpage extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const StartPage(),
+                builder: (context) => const AccountCheckPage(),
               ),
             );
           },

@@ -4,8 +4,8 @@ import 'package:walkfit/emailLoginPage.dart';
 import 'package:walkfit/joinPage.dart';
 import 'package:walkfit/logo.dart';
 
-class StartPage extends StatelessWidget {
-  const StartPage({super.key});
+class AccountCheckPage extends StatelessWidget {
+  const AccountCheckPage({super.key});
 
   @override
   Widget build(BuildContext context) {
