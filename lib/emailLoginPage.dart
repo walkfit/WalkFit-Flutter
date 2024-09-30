@@ -43,7 +43,8 @@ class EmailLoginPage extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
+      body: Container(
+        margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
         child: Column(
           children: [
             const SizedBox(
@@ -54,7 +55,7 @@ class EmailLoginPage extends StatelessWidget {
               height: 67,
             ),
             SizedBox(
-              width: 350,
+              width: double.infinity,
               height: 50,
               child: TextField(
                 onChanged: (value) {},
@@ -71,7 +72,7 @@ class EmailLoginPage extends StatelessWidget {
               height: 20,
             ),
             SizedBox(
-              width: 350,
+              width: double.infinity,
               height: 50,
               child: TextField(
                 decoration: InputDecoration(
@@ -85,7 +86,7 @@ class EmailLoginPage extends StatelessWidget {
               height: 20,
             ),
             Container(
-              width: 350,
+              width: double.infinity,
               height: 50,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
@@ -105,9 +106,46 @@ class EmailLoginPage extends StatelessWidget {
             const SizedBox(
               height: 14,
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                GestureDetector(
+                  onTap: () => print('success'),
+                  child: const Wrap(
+                    children: [
+                      Text(
+                        '비밀번호 찾기 ',
+                        style: TextStyle(
+                          fontSize: 12,
+                        ),
+                      ),
+                      Icon(
+                        Icons.navigate_next_outlined,
+                        size: 18,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 56,
+            ),
             const Text(
-              'data',
-            )
+              'SNS로 간편하게 시작해보세요',
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            MaterialButton(
+              onPressed: () {},
+              child: Image.asset(
+                'assets/images/google_upgrade.png',
+              ),
+            ),
           ],
         ),
       ),
