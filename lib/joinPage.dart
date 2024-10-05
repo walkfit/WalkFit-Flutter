@@ -8,6 +8,7 @@ class Joinpage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () {
             Navigator.push(
@@ -25,11 +26,31 @@ class Joinpage extends StatelessWidget {
         title: const Text(
           '회원가입',
           style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            fontSize: 20,
+            height: 0.07,
+            letterSpacing: -0.2,
           ),
         ),
         centerTitle: true,
+      ),
+      body: Container(
+        margin: const EdgeInsets.only(left: 20),
+        child: const Column(
+          children: [
+            SizedBox(height: 70),
+            Text(
+              '필요한 정보들을\n입력해주세요',
+              style: TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.w500,
+                height: 1.2,
+                letterSpacing: -2,
+              ),
+            ),
+            SizedBox(height: 62),
+          ],
+        ),
       ),
     );
   }

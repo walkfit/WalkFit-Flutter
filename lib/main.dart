@@ -14,9 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          scaffoldBackgroundColor: Colors.white,
-          primaryColor: const Color.fromRGBO(33, 47, 131, 1),
-          fontFamily: 'PretendardVariable'),
+        scaffoldBackgroundColor: Colors.white,
+        primaryColor: const Color.fromRGBO(33, 47, 131, 1),
+      ),
       home: const EmailLoginPage(),
     );
   }
