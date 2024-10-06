@@ -12,9 +12,9 @@ class EmailLoginPage extends StatefulWidget {
 }
 
 class _EmailLoginPageState extends State<EmailLoginPage> {
+  bool passwordHide = false;
   @override
   Widget build(BuildContext context) {
-    bool obscureText = true;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -80,15 +80,20 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                 width: double.infinity,
                 height: 50,
                 child: TextField(
-                  obscureText: obscureText,
+                  obscureText: false,
                   onTapOutside: (event) =>
                       FocusManager.instance.primaryFocus?.unfocus(),
                   decoration: InputDecoration(
                     suffixIcon: IconButton(
                       onPressed: () {
-                        obscureText = false;
+                        setState(() {
+                          passwordHide != passwordHide;
+                          print('!passwordHide');
+                        });
                       },
-                      icon: Image.asset('assets/images/eye_password_hide.png'),
+                      icon: passwordHide
+                          ? Image.asset('assets/images/3eye_password.png')
+                          : Image.asset('assets/images/eye_password_hide.png'),
                     ),
                     prefixIcon: Image.asset('assets/images/uil_lock.png'),
                     hintText: '비밀번호',
