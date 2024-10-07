@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:walkfit/joinPage.dart';
 import 'package:walkfit/logo.dart';
 import 'package:walkfit/startPage.dart';
@@ -35,18 +36,18 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
         title: const Text(
           '로그인',
           style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
+            fontWeight: FontWeight.w600,
+            fontSize: 20,
+            height: 0.07,
+            letterSpacing: -0.2,
           ),
         ),
         centerTitle: true,
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Image.asset(
-              'assets/images/bx_bell.png',
-              width: 40,
-              height: 40,
+            icon: SvgPicture.asset(
+              'assets/images/bell.svg',
             ),
           ),
         ],
@@ -59,6 +60,12 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
               const SizedBox(height: 31),
               const Logo(fontSize: 50),
               const SizedBox(height: 67),
+              Row(children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 12),
+                  child: SvgPicture.asset('assets/images/bell.svg'),
+                ),
+              ]),
               SizedBox(
                 width: double.infinity,
                 height: 50,
@@ -67,10 +74,13 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                       ?.unfocus(), //바깥 영역이 탭 되었을 때 focus비활성화
                   onChanged: (value) {},
                   decoration: InputDecoration(
-                    prefixIcon: Image.asset(
-                      'assets/images/ic_outline-email.png',
+                    prefixIcon: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      child: SvgPicture.asset(
+                        'assets/images/bell.svg',
+                      ),
                     ),
-                    hintText: '이메일',
+                    hintText: '이메일1',
                     border: const OutlineInputBorder(),
                   ),
                 ),
@@ -92,10 +102,17 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                         });
                       },
                       icon: passwordHide
-                          ? Image.asset('assets/images/3eye_password.png')
-                          : Image.asset('assets/images/eye_password_hide.png'),
+                          ? SvgPicture.asset(
+                              'assets/images/eyes-off-outlined.svg')
+                          : SvgPicture.asset(
+                              'assets/images/eyes-off-outlined.svg'),
                     ),
-                    prefixIcon: Image.asset('assets/images/uil_lock.png'),
+                    prefixIcon: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      child: SvgPicture.asset(
+                        'assets/images/lock.svg',
+                      ),
+                    ),
                     hintText: '비밀번호',
                     border: const OutlineInputBorder(),
                   ),
@@ -164,8 +181,8 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                     color: Colors.black.withOpacity(0.2),
                   ),
                 ),
-                child: Image.asset(
-                  'assets/images/google_upgrade.png',
+                child: SvgPicture.asset(
+                  'assets/images/google.svg',
                 ),
               ),
               const SizedBox(height: 149),
@@ -200,89 +217,6 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
           ),
         ),
       ),
-      // body: GestureDetector(
-      //   onTap: () => FocusScope.of(context).unfocus(),
-      //   child: SingleChildScrollView(
-      //     child: Row(
-      //       mainAxisAlignment: MainAxisAlignment.center,
-      //       children: [
-      //         Column(
-      //           children: [
-      //             const SizedBox(
-      //               height: 31,
-      //             ),
-      //             const Logo(fontSize: 50),
-      //             const SizedBox(
-      //               height: 67,
-      //             ),
-      //             SizedBox(
-      //               width: 350,
-      //               height: 50,
-      //               child: TextField(
-      //                 onChanged: (value) {},
-      //                 decoration: InputDecoration(
-      //                   prefixIcon: Image.asset(
-      //                     'assets/images/ic_outline-email.png',
-      //                   ),
-      //                   hintText: '이메일',
-      //                   border: const OutlineInputBorder(),
-      //                 ),
-      //               ),
-      //             ),
-      //             const SizedBox(
-      //               height: 20,
-      //             ),
-      //             SizedBox(
-      //               width: 350,
-      //               height: 50,
-      //               child: TextField(
-      //                 decoration: InputDecoration(
-      //                   prefixIcon: Image.asset('assets/images/uil_lock.png'),
-      //                   hintText: '비밀번호',
-      //                   border: const OutlineInputBorder(),
-      //                 ),
-      //               ),
-      //             ),
-      //             const SizedBox(
-      //               height: 20,
-      //             ),
-      //             Container(
-      //               width: 350,
-      //               height: 50,
-      //               decoration: BoxDecoration(
-      //                 borderRadius: BorderRadius.circular(8),
-      //                 color: Theme.of(context).primaryColor,
-      //               ),
-      //               child: const Center(
-      //                 child: Text(
-      //                   '로그인',
-      //                   textAlign: TextAlign.center,
-      //                   style: TextStyle(
-      //                     color: Colors.white,
-      //                     fontSize: 16,
-      //                   ),
-      //                 ),
-      //               ),
-      //             ),
-      //             const SizedBox(
-      //               height: 14,
-      //             ),
-      //             const Row(
-      //               children: [
-      //                 Expanded(
-      //                   child: Text(
-      //                     'datasdsdsdsd',
-      //                     textAlign: TextAlign.end,
-      //                   ),
-      //                 ),
-      //               ],
-      //             ),
-      //           ],
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-      // ),
     );
   }
 }

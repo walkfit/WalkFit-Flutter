@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:walkfit/emailLoginPage.dart';
 import 'package:walkfit/joinPage.dart';
 import 'package:walkfit/logo.dart';
@@ -40,8 +41,8 @@ class StartPage extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        Image.asset(
-                          'assets/images/google_upgrade.png',
+                        SvgPicture.asset(
+                          'assets/images/google.svg',
                         ),
                         const Expanded(
                           child: Text(
@@ -86,8 +87,8 @@ class StartPage extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        Image.asset(
-                          'assets/images/ic_outline-email.png',
+                        SvgPicture.asset(
+                          'assets/images/email.svg',
                         ),
                         const Expanded(
                           child: Text(
