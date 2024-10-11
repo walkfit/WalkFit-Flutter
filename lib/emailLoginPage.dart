@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:walkfit/appBarStyle.dart';
 import 'package:walkfit/joinPage.dart';
 import 'package:walkfit/logo.dart';
 import 'package:walkfit/startPage.dart';
@@ -17,40 +18,9 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const StartPage(),
-              ),
-            );
-          },
-          icon: const Icon(
-            Icons.navigate_before,
-            size: 40,
-          ),
-        ),
-        title: const Text(
-          '로그인',
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 20,
-            height: 0.07,
-            letterSpacing: -0.2,
-          ),
-        ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              'assets/images/bell.svg',
-            ),
-          ),
-        ],
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(56),
+        child: AppBarStyle(appBarTitle: '로그인', appBarActions: true),
       ),
       body: Container(
         margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
