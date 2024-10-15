@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:walkfit/emailLoginPage.dart';
 import 'package:walkfit/joinPage.dart';
-import 'package:walkfit/logo.dart';
+import 'package:walkfit/widgets/logoWidget.dart';
 
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
@@ -14,7 +14,7 @@ class StartPage extends StatelessWidget {
       body: Stack(
         children: [
           const Center(
-            child: Logo(
+            child: logoWidget(
               fontSize: 90,
             ),
           ),

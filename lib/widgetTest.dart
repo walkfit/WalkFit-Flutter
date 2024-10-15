@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:walkfit/appBarStyle.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:walkfit/widgets/appBarWidget.dart';
 
 void main() {
   runApp(const MyWidget());
@@ -24,7 +25,7 @@ class WidgetTest extends StatelessWidget {
     return const Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(30), // 앱바 높이 조절
-        child: AppBarStyle(
+        child: AppBarWidget(
           appBarTitle: "asdf",
           appBarActions: true,
         ),
@@ -42,16 +43,33 @@ class Apage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('data'),
       ),
-      body: IconButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const WidgetTest(),
+      body: TextField(
+        onTapOutside: (event) => FocusManager.instance.primaryFocus
+            ?.unfocus(), //바깥 영역이 탭 되었을 때 focus비활성화
+        onChanged: (value) {},
+        decoration: InputDecoration(
+          prefixIcon: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12),
+            child: SvgPicture.asset(
+              'assets/images/bell.svg',
             ),
-          );
-        },
-        icon: const Icon(Icons.abc),
+          ),
+          hintText: '이메일12',
+          enabledBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: Color(0x338B8B8B)),
+          ),
+        ),
+        // decoration: InputDecoration(
+        //   prefixIcon: Padding(
+        //     padding: const EdgeInsets.symmetric(vertical: 12),
+        //     child: SvgPicture.asset(
+        //       'assets/images/bell.svg',
+        //     ),
+        //   ),
+        //   hintText: '이메일12',
+        //   border: const OutlineInputBorder(
+        //       borderSide: BorderSide(color: Colors.blue, width: 10)),
+        // ),
       ),
     );
   }

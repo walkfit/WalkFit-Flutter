@@ -1,9 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:walkfit/appBarStyle.dart';
+import 'package:walkfit/widgets/appBarWidget.dart';
 import 'package:walkfit/joinPage.dart';
-import 'package:walkfit/logo.dart';
+import 'package:walkfit/widgets/emailBarWidget.dart';
+import 'package:walkfit/widgets/logoWidget.dart';
 import 'package:walkfit/startPage.dart';
 
 class EmailLoginPage extends StatefulWidget {
@@ -14,13 +15,13 @@ class EmailLoginPage extends StatefulWidget {
 }
 
 class _EmailLoginPageState extends State<EmailLoginPage> {
-  bool passwordHide = false;
+  bool hiddenPassword = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(56),
-        child: AppBarStyle(appBarTitle: '로그인', appBarActions: true),
+        child: AppBarWidget(appBarTitle: '로그인', appBarActions: true),
       ),
       body: Container(
         margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
@@ -28,64 +29,45 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
           child: Column(
             children: [
               const SizedBox(height: 31),
-              const Logo(fontSize: 50),
+              const logoWidget(fontSize: 50),
               const SizedBox(height: 67),
-              Row(children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 12),
-                  child: SvgPicture.asset('assets/images/bell.svg'),
-                ),
-              ]),
-              SizedBox(
-                width: double.infinity,
-                height: 50,
-                child: TextField(
-                  onTapOutside: (event) => FocusManager.instance.primaryFocus
-                      ?.unfocus(), //바깥 영역이 탭 되었을 때 focus비활성화
-                  onChanged: (value) {},
-                  decoration: InputDecoration(
-                    prefixIcon: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                      child: SvgPicture.asset(
-                        'assets/images/bell.svg',
-                      ),
-                    ),
-                    hintText: '이메일1',
-                    border: const OutlineInputBorder(),
-                  ),
-                ),
-              ),
+              const Emailbarwidget(),
               const SizedBox(height: 20),
               SizedBox(
                 width: double.infinity,
                 height: 50,
                 child: TextField(
-                  obscureText: false,
+                  cursorColor: Colors.black,
+                  obscureText: hiddenPassword,
                   onTapOutside: (event) =>
                       FocusManager.instance.primaryFocus?.unfocus(),
                   decoration: InputDecoration(
-                    suffixIcon: IconButton(
-                      onPressed: () {
-                        setState(() {
-                          passwordHide != passwordHide;
-                          print('!passwordHide');
-                        });
-                      },
-                      icon: passwordHide
-                          ? SvgPicture.asset(
-                              'assets/images/eyes-off-outlined.svg')
-                          : SvgPicture.asset(
-                              'assets/images/eyes-off-outlined.svg'),
-                    ),
-                    prefixIcon: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12),
-                      child: SvgPicture.asset(
-                        'assets/images/lock.svg',
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            hiddenPassword = !hiddenPassword;
+                          });
+                        },
+                        icon: hiddenPassword
+                            ? SvgPicture.asset(
+                                'assets/images/eyes-off-outlined.svg')
+                            : SvgPicture.asset(
+                                'assets/images/eyes-on-outlined.svg'),
                       ),
-                    ),
-                    hintText: '비밀번호',
-                    border: const OutlineInputBorder(),
-                  ),
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        child: SvgPicture.asset(
+                          'assets/images/lock.svg',
+                        ),
+                      ),
+                      hintText: '비밀번호',
+                      enabledBorder: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Color(0x338B8B8B)),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide:
+                            BorderSide(color: Theme.of(context).primaryColor),
+                      )),
                 ),
               ),
               const SizedBox(height: 20),
