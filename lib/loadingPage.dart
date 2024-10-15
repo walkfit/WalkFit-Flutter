@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:walkfit/logo.dart';
+import 'package:walkfit/widgets/logoWidget.dart';
 
-class Loading extends StatelessWidget {
-  const Loading({super.key});
+class LoadingPage extends StatelessWidget {
+  const LoadingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class Loading extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Logo(
+              logoWidget(
                 fontSize: 92,
               )
             ],

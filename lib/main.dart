@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:walkfit/emailLoginPage.dart';
 import 'package:walkfit/joinPage.dart';
-import 'package:walkfit/logo.dart';
+import 'package:walkfit/widgets/logoWidget.dart';
 import 'package:walkfit/startPage.dart';
 import 'package:walkfit/widgetTest.dart';
 

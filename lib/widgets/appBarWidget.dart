@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:walkfit/alarmPage.dart';
 
-class AppBarStyle extends StatelessWidget {
+class AppBarWidget extends StatelessWidget {
   final String appBarTitle;
   final bool appBarActions;
-  const AppBarStyle({
+  const AppBarWidget({
     super.key,
     required this.appBarTitle,
-    required this.appBarActions,
+    this.appBarActions = false,
   });
 
   @override
@@ -35,7 +36,14 @@ class AppBarStyle extends StatelessWidget {
       actions: appBarActions
           ? [
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AlarmPage(),
+                    ),
+                  );
+                },
                 icon: SvgPicture.asset(
                   'assets/images/bell.svg',
                 ),
