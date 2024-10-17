@@ -157,7 +157,7 @@ class _EmailLoginPageState extends State<EmailLoginPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const Joinpage(),
+                              builder: (context) => Joinpage(),
                             ),
                           );
                         },

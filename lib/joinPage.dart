@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:walkfit/startPage.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Joinpage extends StatelessWidget {
   const Joinpage({super.key});
