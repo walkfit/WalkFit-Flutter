@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:walkfit/alarmPage.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppBarWidget extends StatelessWidget {
   final String appBarTitle;
@@ -26,9 +27,9 @@ class AppBarWidget extends StatelessWidget {
       ),
       title: Text(
         appBarTitle,
-        style: const TextStyle(
+        style: TextStyle(
           fontWeight: FontWeight.w600,
-          fontSize: 20,
+          fontSize: 20.sp,
           height: 0.07,
           letterSpacing: -0.2,
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class logoWidget extends StatelessWidget {
   final double fontSize;
@@ -15,8 +16,8 @@ class logoWidget extends StatelessWidget {
       style: TextStyle(
         fontFamily: 'Cafe24Moyamoya-Regular-v1.0',
         fontWeight: FontWeight.w400,
-        color: const Color.fromRGBO(33, 47, 131, 1),
-        fontSize: fontSize,
+        color: Theme.of(context).primaryColor,
+        fontSize: fontSize.sp,
       ),
     );
   }

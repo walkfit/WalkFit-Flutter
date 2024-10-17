@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TextFieldWidget extends StatefulWidget {
   final SvgPicture textFieldPrefixIcon;
@@ -23,7 +24,7 @@ class _TextFieldBarState extends State<TextFieldWidget> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 50,
+      height: 50.h,
       child: TextField(
         cursorColor: Colors.black,
         obscureText: widget.hiddenPassword,
@@ -44,7 +45,7 @@ class _TextFieldBarState extends State<TextFieldWidget> {
                   )
                 : null,
             prefixIcon: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12),
+              padding: EdgeInsets.symmetric(vertical: 12.h),
               child: widget.textFieldPrefixIcon,
             ),
             hintText: widget.textFieldHintText,
