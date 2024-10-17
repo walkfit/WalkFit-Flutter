@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         primaryColor: const Color.fromRGBO(33, 47, 131, 1),
       ),
-      home: const EmailLoginPage(),
+      home: const Joinpage(),
     );
   }
 }
