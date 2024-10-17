@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:walkfit/emailLoginPage.dart';
 import 'package:walkfit/joinPage.dart';
 import 'package:walkfit/widgets/logoWidget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
@@ -22,17 +23,17 @@ class StartPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(
-                  height: 387,
+                SizedBox(
+                  height: 387.h,
                 ),
                 InkWell(
                   onTap: () {},
                   child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 14.16,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 14.16.w,
                     ),
-                    width: 350,
-                    height: 52,
+                    width: 350.w,
+                    height: 52.h,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
@@ -44,12 +45,11 @@ class StartPage extends StatelessWidget {
                         SvgPicture.asset(
                           'assets/images/google.svg',
                         ),
-                        const Expanded(
+                        Expanded(
                           child: Text(
                             '구글로 가입하기',
                             style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'PretendardVariable',
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w500,
                               height: 0.08, //줄간격
                               letterSpacing: -0.32, //자간
@@ -61,8 +61,8 @@ class StartPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 12,
+                SizedBox(
+                  height: 12.h,
                 ),
                 InkWell(
                   onTap: () {
@@ -74,11 +74,11 @@ class StartPage extends StatelessWidget {
                     );
                   },
                   child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 14.16,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 14.16.w,
                     ),
-                    width: 350,
-                    height: 52,
+                    width: 350.w,
+                    height: 52.h,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
@@ -90,12 +90,11 @@ class StartPage extends StatelessWidget {
                         SvgPicture.asset(
                           'assets/images/email.svg',
                         ),
-                        const Expanded(
+                        Expanded(
                           child: Text(
                             '이메일로 가입하기',
                             style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'PretendardVariable',
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w500,
                               height: 0.08, //줄간격
                               letterSpacing: -0.32, //자간
@@ -107,26 +106,24 @@ class StartPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 28,
+                SizedBox(
+                  height: 28.h,
                 ),
                 RichText(
                   text: TextSpan(
                     text: '이미 회원이신가요?  ',
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.black,
-                      fontSize: 16,
-                      fontFamily: 'PretendardVariable',
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w500,
                     ),
                     children: <TextSpan>[
                       TextSpan(
                         text: '로그인',
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'PretendardVariable',
+                        style: TextStyle(
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
-                          color: Color.fromRGBO(33, 47, 131, 1),
+                          color: const Color.fromRGBO(33, 47, 131, 1),
                         ),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
