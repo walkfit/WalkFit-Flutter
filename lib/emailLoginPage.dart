@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:walkfit/logo.dart';
+import 'package:walkfit/widgets/logoWidget.dart';
 import 'package:walkfit/accountCheckPage.dart';
 
 class EmailLoginPage extends StatelessWidget {
@@ -48,7 +48,7 @@ class EmailLoginPage extends StatelessWidget {
           const SizedBox(
             height: 31,
           ),
-          const Logo(fontSize: 50),
+          const LogoWidget(fontSize: 50),
           const SizedBox(
             height: 67,
           ),
