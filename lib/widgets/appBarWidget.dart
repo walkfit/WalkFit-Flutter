@@ -6,7 +6,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppBarwidget extends StatelessWidget {
   final String title;
   final bool actions;
-  const AppBarwidget({super.key, required this.title, this.actions = false});
+  const AppBarwidget({
+    super.key,
+    required this.title,
+    this.actions = false,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 
 class LogoWidget extends StatelessWidget {
   final double fontSize;
-  const LogoWidget({
-    super.key,
-    required this.fontSize,
-  });
+  const LogoWidget({super.key, required this.fontSize});
 
   @override
   Widget build(BuildContext context) {

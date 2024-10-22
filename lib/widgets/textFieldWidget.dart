@@ -8,12 +8,13 @@ class TextFieldWidget extends StatefulWidget {
   bool obscureText;
   final bool suffixIcon;
 
-  TextFieldWidget(
-      {super.key,
-      required this.prefixIcon,
-      required this.hintText,
-      required this.obscureText,
-      required this.suffixIcon});
+  TextFieldWidget({
+    super.key,
+    required this.prefixIcon,
+    required this.hintText,
+    required this.obscureText,
+    required this.suffixIcon,
+  });
 
   @override
   State<TextFieldWidget> createState() => _TextFieldWidgetState();
