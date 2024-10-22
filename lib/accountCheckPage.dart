@@ -2,7 +2,13 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:walkfit/emailLoginPage.dart';
 import 'package:walkfit/joinPage.dart';
+<<<<<<< HEAD
 import 'package:walkfit/widgets/logoWidget.dart';
+=======
+import 'package:walkfit/logo.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+>>>>>>> develop
 
 class AccountCheckPage extends StatelessWidget {
   const AccountCheckPage({super.key});
@@ -12,57 +18,53 @@ class AccountCheckPage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+<<<<<<< HEAD
           const Center(
             child: LogoWidget(
               fontSize: 90,
+=======
+          Center(
+            child: Logo(
+              fontSize: 92.sp,
+>>>>>>> develop
             ),
           ),
-          Align(
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 22.h),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(
-                  height: 387,
-                ),
+                SizedBox(height: 589.h),
                 InkWell(
                   onTap: () {},
                   child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 14.16,
-                    ),
-                    width: 350,
-                    height: 52,
+                    padding: EdgeInsets.symmetric(horizontal: 14.16.w),
+                    width: double.infinity,
+                    height: 52.h,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
-                        color: const Color.fromRGBO(140, 140, 140, 0.2),
+                        color: const Color(0x338B8B8B),
                       ),
                     ),
                     child: Row(
                       children: [
-                        Image.asset(
-                          'assets/images/google_upgrade.png',
-                        ),
-                        const Expanded(
-                          child: Text(
-                            '구글로 가입하기',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'PretendardVariable',
-                              fontWeight: FontWeight.w500,
-                              height: 0.08, //줄간격
-                              letterSpacing: -0.32, //자간
-                            ),
-                            textAlign: TextAlign.center,
+                        SvgPicture.asset('assets/images/devicon_google.svg'),
+                        SizedBox(width: 85.98.w),
+                        const Text(
+                          '구글로 가입하기',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'PretendardVariable',
+                            fontWeight: FontWeight.w500,
+                            height: 0.08, //줄간격
+                            letterSpacing: -0.32, //자간
                           ),
                         ),
                       ],
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 12,
-                ),
+                SizedBox(height: 12.h),
                 InkWell(
                   onTap: () {
                     Navigator.push(
@@ -73,11 +75,11 @@ class AccountCheckPage extends StatelessWidget {
                     );
                   },
                   child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 14.16,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 14.16.w,
                     ),
-                    width: 350,
-                    height: 52,
+                    width: double.infinity,
+                    height: 52.h,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
@@ -86,46 +88,45 @@ class AccountCheckPage extends StatelessWidget {
                     ),
                     child: Row(
                       children: [
-                        Image.asset(
-                          'assets/images/ic_outline-email.png',
-                        ),
-                        const Expanded(
-                          child: Text(
-                            '이메일로 가입하기',
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontFamily: 'PretendardVariable',
-                              fontWeight: FontWeight.w500,
-                              height: 0.08, //줄간격
-                              letterSpacing: -0.32, //자간
-                            ),
-                            textAlign: TextAlign.center,
+                        SvgPicture.asset('assets/images/ic_outline-email.svg'),
+                        SizedBox(width: 78.35.w),
+                        const Text(
+                          '이메일로 가입하기',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'PretendardVariable',
+                            fontWeight: FontWeight.w500,
+                            height: 0.08, //줄간격
+                            letterSpacing: -0.32, //자간
                           ),
                         ),
                       ],
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 28,
-                ),
-                RichText(
-                  text: TextSpan(
-                    text: '이미 회원이신가요?  ',
-                    style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 16,
-                      fontFamily: 'PretendardVariable',
-                      fontWeight: FontWeight.w500,
+                SizedBox(height: 28.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      '이미 회원이신가요?',
+                      style: TextStyle(
+                        fontSize: 16.sp,
+                        height: 0,
+                        fontWeight: FontWeight.w400,
+                        letterSpacing: -0.50,
+                      ),
                     ),
-                    children: <TextSpan>[
-                      TextSpan(
+                    SizedBox(width: 7.w),
+                    RichText(
+                      text: TextSpan(
                         text: '로그인',
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'PretendardVariable',
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          color: Theme.of(context).primaryColor,
                           fontWeight: FontWeight.w600,
-                          color: Color.fromRGBO(33, 47, 131, 1),
+                          height: 0,
+                          letterSpacing: -0.50,
                         ),
                         recognizer: TapGestureRecognizer()
                           ..onTap = () {
@@ -137,8 +138,8 @@ class AccountCheckPage extends StatelessWidget {
                             );
                           },
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ],
             ),
