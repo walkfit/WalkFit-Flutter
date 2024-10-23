@@ -2,7 +2,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:walkfit/emailLoginPage.dart';
 import 'package:walkfit/joinPage.dart';
-import 'package:walkfit/logo.dart';
 
 void main() {
   runApp(const WidgetTest());

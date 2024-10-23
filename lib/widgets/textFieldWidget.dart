@@ -23,7 +23,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 350,
+      width: double.infinity,
       height: 52.h,
       child: TextField(
         obscureText: widget.obscureText,
@@ -50,7 +50,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
                           'assets/images/weui_eyes-on-outlined.svg'),
                 )
               : const SizedBox(),
-          border: OutlineInputBorder(
+          enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
               borderSide: const BorderSide(color: Color(0xFFAFAFAF), width: 1)),
           focusedBorder: OutlineInputBorder(

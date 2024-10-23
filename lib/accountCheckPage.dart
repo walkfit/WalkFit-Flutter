@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:walkfit/emailLoginPage.dart';
 import 'package:walkfit/joinPage.dart';
-import 'package:walkfit/logo.dart';
+import 'package:walkfit/widgets/logoWidget.dart';
 
 class AccountCheckPage extends StatelessWidget {
   const AccountCheckPage({super.key});
@@ -13,7 +13,7 @@ class AccountCheckPage extends StatelessWidget {
       body: Stack(
         children: [
           const Center(
-            child: Logo(
+            child: LogoWidget(
               fontSize: 90,
             ),
           ),
