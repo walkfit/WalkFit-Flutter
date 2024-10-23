@@ -17,7 +17,6 @@ class EmailLoginPage extends StatelessWidget {
         preferredSize: Size.fromHeight(58.h),
         child: const AppBarWidget(
           title: '로그인',
-          actions: true,
         ),
       ),
       body: SingleChildScrollView(

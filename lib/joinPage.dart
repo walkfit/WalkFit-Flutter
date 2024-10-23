@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:walkfit/accountCheckPage.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:walkfit/widgets/buttonWidget.dart';
+import 'package:walkfit/widgets/ButtonWidget.dart';
 import 'package:walkfit/widgets/appBarWidget.dart';
 import 'package:walkfit/widgets/textFieldWidget.dart';
 
@@ -191,9 +191,10 @@ class Joinpage extends StatelessWidget {
               ),
               SizedBox(height: 64.h),
               ButtonWidget(
-                  text: '회원가입',
-                  textColor: const Color(0xFFF0F0F0),
-                  backgroundColor: Theme.of(context).primaryColor,),
+                text: '회원가입',
+                textColor: const Color(0xFFF0F0F0),
+                backgroundColor: Theme.of(context).primaryColor,
+              ),
             ],
           ),
         ),
