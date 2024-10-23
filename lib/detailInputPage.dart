@@ -77,9 +77,10 @@ class DetailInputPage extends StatelessWidget {
             ),
             SizedBox(height: 88.h),
             ButtonWidget(
-                text: '시작하기',
-                textColor: const Color(0xFFF0F0F0),
-                backgroundColor: Theme.of(context).primaryColor),
+              text: '시작하기',
+              textColor: const Color(0xFFF0F0F0),
+              backgroundColor: Theme.of(context).primaryColor,
+            ),
           ],
         ),
       ),
