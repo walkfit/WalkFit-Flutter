@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:walkfit/widgets/logoWidget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Loading extends StatelessWidget {
   const Loading({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -15,7 +16,7 @@ class Loading extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               LogoWidget(
-                fontSize: 92,
+                fontSize: 92.sp,
               )
             ],
           ),
