@@ -4,6 +4,7 @@ import 'package:walkfit/detailInputPage.dart';
 import 'package:walkfit/emailLoginPage.dart';
 import 'package:walkfit/accountCheckPage.dart';
 import 'package:walkfit/joinPage.dart';
+import 'package:walkfit/myPage.dart';
 import 'package:walkfit/onBoarding/onBoardingPage1.dart';
 import 'package:walkfit/onBoarding/onBoardingPage2.dart';
 import 'package:walkfit/onBoarding/onBoardingPage3.dart';
@@ -22,10 +23,11 @@ class MyApp extends StatelessWidget {
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-            scaffoldBackgroundColor: Colors.white,
-            primaryColor: const Color.fromRGBO(33, 47, 131, 1),
-            fontFamily: 'PretendardVariable'),
-        home: const OnBoardingPage3(),
+          scaffoldBackgroundColor: Colors.white,
+          primaryColor: const Color.fromRGBO(33, 47, 131, 1),
+          fontFamily: 'PretendardVariable',
+        ),
+        home: const MyPage(),
       ),
     );
   }

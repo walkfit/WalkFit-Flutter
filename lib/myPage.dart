@@ -144,30 +144,37 @@ class _MyPageState extends State<MyPage> {
           ),
         ),
         child: BottomNavigationBar(
+          selectedLabelStyle: TextStyle(
+            color: const Color(0xFF0C102E),
+            fontSize: 12.sp,
+            fontWeight: FontWeight.w500,
+            letterSpacing: -0.24,
+          ),
           backgroundColor: Colors.white,
           type: BottomNavigationBarType
               .fixed, //4개 이상의 아이템 추가시 label이 보이지않는 문제를 해결함
           currentIndex: currentIndex,
           onTap: (value) => setState(() {
             currentIndex = value;
-            print('currentIndex');
           }),
           items: [
             BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/images/ic_round-home.svg',
-              ),
+              icon: SvgPicture.asset('assets/images/ic_round-home.svg'),
               label: '홈',
             ),
             BottomNavigationBarItem(
-                icon: SvgPicture.asset(
-                    'assets/images/material-symbols_leaderboard-rounded.svg'),
-                label: '리더보드'),
+              icon: SvgPicture.asset(
+                  'assets/images/material-symbols_leaderboard-rounded.svg'),
+              label: '리더보드',
+            ),
             BottomNavigationBarItem(
-                icon: SvgPicture.asset('assets/images/Group.svg'), label: '러닝'),
+              icon: SvgPicture.asset('assets/images/Group.svg'),
+              label: '러닝',
+            ),
             BottomNavigationBarItem(
-                icon: SvgPicture.asset('assets/images/mdi_user.svg'),
-                label: '마이페이지')
+              icon: SvgPicture.asset('assets/images/mdi_user.svg'),
+              label: '마이페이지',
+            )
           ],
         ),
       ),
