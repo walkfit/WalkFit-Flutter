@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:intl/intl.dart';
+import 'package:table_calendar/table_calendar.dart';
 import 'package:walkfit/widgets/appBarWidget.dart';
 
 class AttendanceCheckPage extends StatelessWidget {
@@ -17,48 +19,62 @@ class AttendanceCheckPage extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           children: [
-            SizedBox(height: 52.h),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Text(
-                      '알람 설정',
-                      style: TextStyle(
-                        color: const Color(0xFFA3A3A3),
-                        fontSize: 14.sp,
-                        fontVariations: const [FontVariation('wght', 500)],
-                        letterSpacing: -0.28,
-                      ),
-                    ),
-                    SizedBox(width: 4.w),
-                    SvgPicture.asset(
-                      'assets/images/2weui_arrow-outlined.svg',
-                      color: const Color(0xFFA3A3A3),
-                    ),
-                  ],
+            SizedBox(height: 24.h),
+            TableCalendar(
+              locale: 'ko-KR',
+              focusedDay: DateTime.now(),
+              firstDay: DateTime(2023),
+              lastDay: DateTime(2025),
+              headerStyle: HeaderStyle(
+                formatButtonVisible: false, // 월/주 버튼 여부
+                leftChevronVisible: false,
+                titleCentered: true,
+                headerPadding: EdgeInsets.symmetric(vertical: 28.w),
+                titleTextFormatter: (date, locale) => // 타이틀 날짜 형태
+                    DateFormat.M(locale).format(date),
+                titleTextStyle: TextStyle(
+                  color: const Color(0xFF212121),
+                  fontSize: 18.sp,
+                  fontVariations: const [FontVariation('wght', 600)],
                 ),
-                // Row(
-                //   children: [
-                //     Text(
-                //       '',
-                //       style: TextStyle(
-                //         color: const Color(0xFFA3A3A3),
-                //         fontSize: 14.sp,
-                //         fontVariations: const [FontVariation('wght', 500)],
-                //         letterSpacing: -0.28,
-                //       ),
-                //     ),
-                //     SizedBox(width: 4.w),
-                //     SvgPicture.asset(
-                //       'assets/images/2weui_arrow-outlined.svg',
-                //       color: const Color(0xFFA3A3A3),
-                //     ),
-                //   ],
-                // ),
-              ],
-            )
+                rightChevronPadding: EdgeInsets.zero,
+                rightChevronIcon:
+                    SvgPicture.asset('assets/images/bxs_up-arrow.svg'),
+              ),
+              calendarStyle: CalendarStyle(
+                defaultTextStyle: TextStyle(
+                  color: const Color(0xFF212F83),
+                  fontSize: 16.sp,
+                  fontVariations: const [FontVariation('wght', 900)],
+                ),
+                weekendTextStyle: TextStyle(
+                  color: const Color(0xFF212F83),
+                  fontSize: 16.sp,
+                  fontVariations: const [FontVariation('wght', 900)],
+                ),
+                todayTextStyle: const TextStyle(
+                  color: Color(0xFF212F83),
+                  fontVariations: [FontVariation('wght', 900)],
+                ),
+                todayDecoration: const ShapeDecoration(
+                  shape: CircleBorder(
+                    side: BorderSide(color: Color(0xFF212F83)),
+                  ),
+                ),
+              ),
+              daysOfWeekStyle: DaysOfWeekStyle(
+                weekdayStyle: TextStyle(
+                  color: const Color(0xFF212121),
+                  fontSize: 16.sp,
+                  fontVariations: const [FontVariation('wght', 500)],
+                ),
+                weekendStyle: TextStyle(
+                  color: const Color(0xFF212121),
+                  fontSize: 16.sp,
+                  fontVariations: const [FontVariation('wght', 500)],
+                ),
+              ),
+            ),
           ],
         ),
       ),
