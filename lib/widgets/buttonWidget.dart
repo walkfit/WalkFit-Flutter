@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:walkfit/accountCheckPage.dart';
-import 'package:walkfit/emailLoginPage.dart';
 
 class ButtonWidget extends StatelessWidget {
   final String text;
