@@ -91,8 +91,8 @@ class EmailLoginPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 149.h),
-              Wrap(
-                crossAxisAlignment: WrapCrossAlignment.center,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     '아직 회원이 아니신가요?',

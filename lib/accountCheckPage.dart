@@ -93,7 +93,8 @@ class AccountCheckPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 28.h),
-                Wrap(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       '이미 회원이신가요?',

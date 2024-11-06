@@ -25,7 +25,8 @@ class OnBoardingPage3 extends StatelessWidget {
               ),
             ),
             SizedBox(height: 397.h),
-            Wrap(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CircleWidget(
                   width: 14.w,
