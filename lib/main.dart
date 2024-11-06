@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+<<<<<<< HEAD
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:walkfit/home/attendanceCheckPage.dart';
+=======
+import 'package:walkfit/detailInputPage.dart';
+import 'package:walkfit/emailLoginPage.dart';
+import 'package:walkfit/accountCheckPage.dart';
+import 'package:walkfit/joinPage.dart';
+import 'package:walkfit/myPage.dart';
+import 'package:walkfit/onBoarding/onBoardingPage1.dart';
+import 'package:walkfit/onBoarding/onBoardingPage2.dart';
+import 'package:walkfit/onBoarding/onBoardingPage3.dart';
+>>>>>>> develop
 
 void main() async {
   await initializeDateFormatting();
@@ -22,7 +33,11 @@ class MyApp extends StatelessWidget {
           primaryColor: const Color.fromRGBO(33, 47, 131, 1),
           fontFamily: 'PretendardVariable',
         ),
+<<<<<<< HEAD
         home: const AttendanceCheckPage(),
+=======
+        home: const MyPage(),
+>>>>>>> develop
       ),
     );
   }

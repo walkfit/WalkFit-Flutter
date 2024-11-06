@@ -1,53 +1,42 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:walkfit/emailLoginPage.dart';
-import 'package:walkfit/joinPage.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-void main() {
+void main() async {
   runApp(const WidgetTest());
 }
 
-class WidgetTest extends StatelessWidget {
+class WidgetTest extends StatefulWidget {
   const WidgetTest({super.key});
+
+  @override
+  State<WidgetTest> createState() => _WidgetTestState();
+}
+
+class _WidgetTestState extends State<WidgetTest> {
+  var _index = 0;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-      ),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Test'),
-          backgroundColor: Colors.grey,
+          title: const Text('bottomNavigation'),
         ),
-        body: Container(
-          margin: const EdgeInsets.fromLTRB(40, 0, 40, 0),
-          child: Column(
-            children: <Widget>[
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [Text('hello')],
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              const Row(
-                children: [Text('world')],
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              Container(
-                color: Colors.lightBlueAccent,
-                width: 340,
-                height: 50,
-                child: const Center(
-                  child: Text('data'),
-                ),
-              ),
-            ],
-          ),
+        body: const Text('data'),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _index,
+          onTap: (value) {
+            setState(() {
+              _index = value;
+              print(_index);
+            });
+          },
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.account_circle_rounded), label: 'mypage'),
+            BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'menu'),
+          ],
         ),
       ),
     );
