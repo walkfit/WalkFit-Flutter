@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+import 'package:walkfit/auth/googleLogin.dart';
+import 'package:walkfit/detailInputPage.dart';
 import 'package:walkfit/emailLoginPage.dart';
 import 'package:walkfit/joinPage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -9,7 +12,6 @@ import 'package:walkfit/widgets/logoWidget.dart';
 
 class AccountCheckPage extends StatelessWidget {
   AccountCheckPage({super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +25,15 @@ class AccountCheckPage extends StatelessWidget {
             SizedBox(height: 112.h),
             InkWell(
               onTap: () async{
-                GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-                GoogleSignInAuthentication? authentication = await googleUser?.authentication;
-                var accessToken = authentication?.accessToken;
-                print('accessToken = $accessToken');
+                var user = await signInGoogle();
+                if (user != null) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DetailInputPage()));
+                }else{
+                  log('user is null');
+                }
               },
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 14.16.w),
@@ -47,7 +54,8 @@ class AccountCheckPage extends StatelessWidget {
                         fontSize: 16.sp,
                         color: Colors.black,
                         fontWeight: FontWeight.w400,
-                        height: 0.08.h, //줄간격
+                        height: 0.08.h,
+                        //줄간격
                         letterSpacing: -0.32, //자간
                       ),
                     ),
@@ -85,7 +93,8 @@ class AccountCheckPage extends StatelessWidget {
                         fontSize: 16.sp,
                         color: Colors.black,
                         fontWeight: FontWeight.w400,
-                        height: 0.h, //줄간격
+                        height: 0.h,
+                        //줄간격
                         letterSpacing: -0.32, //자간
                       ),
                     ),
