@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:walkfit/accountCheckPage.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:walkfit/widgets/ButtonWidget.dart';
 import 'package:walkfit/widgets/appBarWidget.dart';

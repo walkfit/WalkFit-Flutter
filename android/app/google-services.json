@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "904095169215",
+    "project_id": "prime-basis-441408-a6",
+    "storage_bucket": "prime-basis-441408-a6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904095169215:android:8f511507c18f42c4ade40a",
+        "android_client_info": {
+          "package_name": "com.example.walkfit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904095169215-5flj9lfceihb962repnsaqidj6le6lmp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.walkfit",
+            "certificate_hash": "2af89888688f10b2faa379d33daafc75362debc3"
+          }
+        },
+        {
+          "client_id": "904095169215-htjt8uv2j2bo9ds32uuta9kkd6731rt5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlA4HgApAceX0g7fVBJB5uFBrQMqhqNw8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "904095169215-htjt8uv2j2bo9ds32uuta9kkd6731rt5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "904095169215-j1if99imklni3qu397lv98e0ldka4dt5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.walkfit"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
