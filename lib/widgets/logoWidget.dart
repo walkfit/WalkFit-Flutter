@@ -11,7 +11,7 @@ class LogoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       '워크핏',
-      textAlign: TextAlign.center,
+      // textAlign: TextAlign.center,
       style: TextStyle(
         fontFamily: 'Cafe24Moyamoya-Regular-v1.0',
         fontWeight: FontWeight.w400,
