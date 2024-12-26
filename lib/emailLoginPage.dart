@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:walkfit/widgets/ButtonWidget.dart';
 import 'package:walkfit/widgets/appBarWidget.dart';
 import 'package:walkfit/widgets/logoWidget.dart';
-import 'package:walkfit/widgets/textFieldWidget.dart';
+import 'package:walkfit/widgets/textFormFieldWidget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EmailLoginPage extends StatelessWidget {

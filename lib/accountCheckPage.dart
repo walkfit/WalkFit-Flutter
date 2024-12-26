@@ -11,7 +11,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:walkfit/widgets/logoWidget.dart';
 
 class AccountCheckPage extends StatelessWidget {
-  AccountCheckPage({super.key});
+  const AccountCheckPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,6 @@ class AccountCheckPage extends StatelessWidget {
                         color: Colors.black,
                         fontWeight: FontWeight.w400,
                         height: 0.08.h,
-                        //줄간격
                         letterSpacing: -0.32, //자간
                       ),
                     ),
