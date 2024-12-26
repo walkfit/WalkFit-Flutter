@@ -1,9 +1,11 @@
 import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 import 'package:walkfit/widgets/ButtonWidget.dart';
 import 'package:walkfit/widgets/appBarWidget.dart';
 
@@ -22,6 +24,10 @@ class _JoinpageState extends State<Joinpage> {
   bool _obscureText = true;
   final _formKey = GlobalKey<FormState>();
 
+  bool firstTermsOfUse = false;
+  bool secondTermsOfUse = false;
+  bool thirdTermsOfUse = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,11 +43,6 @@ class _JoinpageState extends State<Joinpage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TextButton(
-                  onPressed: () => log(
-                      'userPasswordController = ${userPasswordController.text.toString()}'),
-                  child: const Text('값 확인하기'),
-                ),
                 SizedBox(height: 70.h),
                 Text(
                   '필요한 정보들을\n입력해주세요',
@@ -61,7 +62,7 @@ class _JoinpageState extends State<Joinpage> {
                   child: TextFormField(
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return '이메일을 한 번 더 입력해주세요.';
+                        return '이메일을 입력해주세요.';
                       }
                       return null;
                     },
@@ -73,7 +74,7 @@ class _JoinpageState extends State<Joinpage> {
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
-                      hintText: '사용할 비밀번호',
+                      hintText: '이메일',
                       hintStyle: const TextStyle(
                         color: Color(0xFFAFAFAF),
                         letterSpacing: -0.32,
@@ -101,7 +102,7 @@ class _JoinpageState extends State<Joinpage> {
                   child: TextFormField(
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return '비밀번호를 한 번 더 입력해주세요.';
+                        return '비밀번호를 입력해주세요.';
                       }
                       return null;
                     },
@@ -155,7 +156,7 @@ class _JoinpageState extends State<Joinpage> {
                   child: TextFormField(
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return '비밀번호를 한 번 더 입력해주세요.';
+                        return '비밀번호를 입력해주세요.';
                       } else if (value !=
                           userPasswordController.text.toString()) {
                         return '비밀번호가 일치하지 않습니다.';
@@ -201,30 +202,21 @@ class _JoinpageState extends State<Joinpage> {
                     ),
                   ),
                 ),
-                SizedBox(height: 7.h),
-                Text(
-                  '비밀번호가 일치하지 않습니다',
-                  style: TextStyle(
-                    color: const Color(0xFFFF5E5E),
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w300,
-                    letterSpacing: -0.24,
-                  ),
-                ),
                 SizedBox(height: 71.h),
                 Wrap(
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
-                    Container(
-                      width: 22.w,
-                      height: 22.h,
-                      decoration: const ShapeDecoration(
-                        color: Color.fromRGBO(33, 47, 131, 1),
-                        shape: CircleBorder(),
-                      ),
-                      child: SvgPicture.asset(
-                        'assets/images/material-symbols_check.svg',
-                      ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          firstTermsOfUse = !firstTermsOfUse;
+                        });
+                      },
+                      child: firstTermsOfUse
+                          ? SvgPicture.asset(
+                              'assets/images/material-symbols-confirmed.svg')
+                          : SvgPicture.asset(
+                              'assets/images/material-symbols-not-confirmed.svg'),
                     ),
                     SizedBox(width: 11.w),
                     Text(
@@ -242,16 +234,17 @@ class _JoinpageState extends State<Joinpage> {
                 Wrap(
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
-                    Container(
-                      width: 22.w,
-                      height: 22.h,
-                      decoration: const ShapeDecoration(
-                        color: Color.fromRGBO(33, 47, 131, 1),
-                        shape: CircleBorder(),
-                      ),
-                      child: SvgPicture.asset(
-                        'assets/images/material-symbols_check.svg',
-                      ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          secondTermsOfUse = !secondTermsOfUse;
+                        });
+                      },
+                      child: secondTermsOfUse
+                          ? SvgPicture.asset(
+                              'assets/images/material-symbols-confirmed.svg')
+                          : SvgPicture.asset(
+                              'assets/images/material-symbols-not-confirmed.svg'),
                     ),
                     SizedBox(width: 11.w),
                     Text.rich(
@@ -260,7 +253,6 @@ class _JoinpageState extends State<Joinpage> {
                           color: Colors.black,
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w300,
-                          height: 0.08.h,
                           letterSpacing: -0.32,
                         ),
                         children: [
@@ -274,9 +266,13 @@ class _JoinpageState extends State<Joinpage> {
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w300,
                               decoration: TextDecoration.underline,
-                              height: 0.08.h,
                               letterSpacing: -0.32,
                             ),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () async {
+                                await launchUrlString(
+                                    "https://chivalrous-fighter-44d.notion.site/16873610c0b7805bbe48e0cff794a274?pvs=4");
+                              },
                           ),
                           const TextSpan(
                             text: '에 동의합니다.',
@@ -290,16 +286,17 @@ class _JoinpageState extends State<Joinpage> {
                 Wrap(
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
-                    Container(
-                      width: 22.w,
-                      height: 22.h,
-                      decoration: const ShapeDecoration(
-                        color: Color.fromRGBO(33, 47, 131, 1),
-                        shape: CircleBorder(),
-                      ),
-                      child: SvgPicture.asset(
-                        'assets/images/material-symbols_check.svg',
-                      ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          thirdTermsOfUse = !thirdTermsOfUse;
+                        });
+                      },
+                      child: thirdTermsOfUse
+                          ? SvgPicture.asset(
+                              'assets/images/material-symbols-confirmed.svg')
+                          : SvgPicture.asset(
+                              'assets/images/material-symbols-not-confirmed.svg'),
                     ),
                     SizedBox(width: 11.w),
                     Text.rich(
@@ -308,7 +305,6 @@ class _JoinpageState extends State<Joinpage> {
                           color: Colors.black,
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w300,
-                          height: 0.08.h,
                           letterSpacing: -0.32,
                         ),
                         children: [
@@ -322,7 +318,6 @@ class _JoinpageState extends State<Joinpage> {
                               fontSize: 16.sp,
                               fontWeight: FontWeight.w300,
                               decoration: TextDecoration.underline,
-                              height: 0.08.h,
                               letterSpacing: -0.32,
                             ),
                           ),
@@ -336,24 +331,22 @@ class _JoinpageState extends State<Joinpage> {
                 ),
                 SizedBox(height: 64.h),
                 ButtonWidget(
-                  onTap: () {
+                  onTap: () async {
                     if (_formKey.currentState!.validate()) {
-                      _formKey.currentState!.save();
-
-                      String emailValue = userEmailController.text.toString();
-                      String passwordValue =
-                          userPasswordController.text.toString();
-                      // String passwordConfirmValue = userPasswordConfirmController.text.toString();
-
                       await FirebaseAuth.instance
                           .createUserWithEmailAndPassword(
-                              email: emailValue, password: passwordValue);
+                        email: userEmailController.text.toString(),
+                        password: userPasswordController.text.toString(),
+                      );
                     }
-                    Account account = Account(userEmailController.text.toString(), userPasswordController.text.toString(), userPasswordConfirmController.text.toString());
                   },
                   text: '회원가입',
-                  textColor: const Color(0xFFF0F0F0),
-                  backgroundColor: Theme.of(context).primaryColor,
+                  textColor: secondTermsOfUse & thirdTermsOfUse
+                      ? Colors.white
+                      : const Color(0xFF5E6FD3),
+                  backgroundColor: secondTermsOfUse & thirdTermsOfUse
+                      ? const Color(0xFF27379D)
+                      : const Color(0xFFD4D9FA),
                 ),
               ],
             ),
@@ -361,16 +354,5 @@ class _JoinpageState extends State<Joinpage> {
         ),
       ),
     );
-  }
-}
-class Account{
-  String email = '';
-  String password = '';
-  String passwordConfirm = '';
-  
-  Account(String emailValue, String passwordValue, String passwordConfirmValue){
-    email = emailValue;
-    password = passwordValue;
-    password = passwordConfirmValue;
   }
 }
