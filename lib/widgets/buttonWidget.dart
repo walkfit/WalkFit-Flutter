@@ -4,11 +4,13 @@ class ButtonWidget extends StatelessWidget {
   final String text;
   final Color textColor;
   final Color backgroundColor;
+  final VoidCallback onTap;
   const ButtonWidget({
     super.key,
     required this.text,
     required this.textColor,
     required this.backgroundColor,
+    required this.onTap,
   });
 
   @override
@@ -21,7 +23,7 @@ class ButtonWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
       ),
-      onPressed: () {},
+      onPressed: onTap,
       child: Text(
         text,
         style: TextStyle(

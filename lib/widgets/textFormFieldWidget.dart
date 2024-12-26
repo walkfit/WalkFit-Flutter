@@ -2,53 +2,66 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class TextFieldWidget extends StatefulWidget {
-  final Widget prefixIcon;
+class TextFormFieldWidget extends StatefulWidget {
+  final SvgPicture prefixIcon;
   final String hintText;
   bool obscureText;
   final bool suffixIcon;
   final Color textColor;
   final Color backgroundColor;
   final bool borderSide;
+  final TextEditingController controller;
 
-  TextFieldWidget({
+  TextFormFieldWidget({
     super.key,
     required this.prefixIcon,
     required this.hintText,
-    required this.obscureText,
-    required this.suffixIcon,
+    this.suffixIcon = false,
+    this.obscureText = false,
     this.textColor = const Color(0xFFAFAFAF),
     this.backgroundColor = Colors.white,
     this.borderSide = true,
+    required this.controller,
   });
 
-  factory TextFieldWidget.filled({
-    required String hintText,
-    required Widget prefixIcon,
-    required Color textColor,
-    required Color backgroundColor,
-  }) =>
-      TextFieldWidget(
-        prefixIcon: prefixIcon,
-        hintText: hintText,
-        obscureText: true,
-        suffixIcon: false,
-        textColor: textColor,
-        backgroundColor: backgroundColor,
-        borderSide: false,
-      );
+  // factory TextFormFieldWidget.password({
+  //   required String hintText,
+  //   required SvgPicture prefixIcon,
+  // }) =>
+  //     TextFormFieldWidget(
+  //       prefixIcon: prefixIcon,
+  //       hintText: hintText,
+  //       obscureText: true,
+  //       suffixIcon: true,
+  //       textColor: const Color(0xFFAFAFAF),
+  //     );
+
+  // factory TextFormFieldWidget.passwordCheck({
+  //   required SvgPicture prefixIcon,
+  // }) =>
+  //     TextFormFieldWidget(
+  //       hintText: '비밀번호 확인',
+  //       prefixIcon: prefixIcon,
+  //       backgroundColor: const Color(0xFFE57070),
+  //       obscureText: true,
+  //       suffixIcon: true,
+  //     );
 
   @override
-  State<TextFieldWidget> createState() => _TextFieldWidgetState();
+  State<TextFormFieldWidget> createState() => _TextFieldWidgetState();
 }
 
-class _TextFieldWidgetState extends State<TextFieldWidget> {
+class _TextFieldWidgetState extends State<TextFormFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
       height: 52.h,
-      child: TextField(
+      child: TextFormField(
+        validator: (value) {
+          
+        },
+        controller: widget.controller,
         selectionControls: MaterialTextSelectionControls(),
         cursorColor: Theme.of(context).primaryColor,
         obscureText: widget.obscureText,
