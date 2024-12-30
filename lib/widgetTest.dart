@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+
+InAppLocalhostServer server = InAppLocalhostServer(port: 8080);
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await server.start();
   runApp(const WidgetTest());
 }
 
@@ -16,15 +21,18 @@ class WidgetTest extends StatelessWidget {
 class Stateless extends StatelessWidget {
   const Stateless({super.key});
 
+
+  
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
-        child: Text('data'),
+        child: Tab(),
       ),
     );
   }
 }
+
 
 class Stateful extends StatefulWidget {
   const Stateful({super.key});

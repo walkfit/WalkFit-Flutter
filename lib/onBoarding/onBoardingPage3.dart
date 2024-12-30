@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:walkfit/runningPage.dart';
 import 'package:walkfit/widgets/ButtonWidget.dart';
 import 'package:walkfit/widgets/circleWidget.dart';
 
@@ -51,6 +52,13 @@ class OnBoardingPage3 extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: ButtonWidget(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const RunningPage(),
+                      ));
+                },
                 text: '시작하기',
                 textColor: Colors.white,
                 backgroundColor: Theme.of(context).primaryColor,

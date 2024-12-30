@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:walkfit/onBoarding/onBoardingPage3.dart';
 import 'package:walkfit/widgets/buttonWidget.dart';
 import 'package:walkfit/widgets/circleWidget.dart';
 
@@ -49,10 +50,16 @@ class OnBoardingPage2 extends StatelessWidget {
           SizedBox(height: 55.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
-            child: const ButtonWidget(
+            child: ButtonWidget(
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const OnBoardingPage3(),
+                ),
+              ),
               text: '다음으로',
-              textColor: Color(0xFF5E6FD3),
-              backgroundColor: Color(0xFFD4D9FA),
+              textColor: const Color(0xFF5E6FD3),
+              backgroundColor: const Color(0xFFD4D9FA),
             ),
           ),
         ],

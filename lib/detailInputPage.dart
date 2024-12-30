@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:walkfit/onBoarding/onBoardingPage1.dart';
 import 'package:walkfit/widgets/buttonWidget.dart';
 
 class DetailInputPage extends StatelessWidget {
@@ -77,6 +78,13 @@ class DetailInputPage extends StatelessWidget {
             ),
             SizedBox(height: 88.h),
             ButtonWidget(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const OnBoardingPage1(),
+                    ));
+              },
               text: '시작하기',
               textColor: const Color(0xFFF0F0F0),
               backgroundColor: Theme.of(context).primaryColor,

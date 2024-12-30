@@ -1,8 +1,8 @@
 import  'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:walkfit/joinPage.dart';
 import 'package:walkfit/auth/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:walkfit/emailLoginPage.dart';
   
 void main() async {
   // await initializeDateFormatting();
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
           primaryColor: const Color.fromRGBO(33, 47, 131, 1),
           fontFamily: 'PretendardVariable',
         ),
-        home: const Joinpage(),
+        home: const EmailLoginPage(),
 
       ),
     );
